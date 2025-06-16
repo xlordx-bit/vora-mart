@@ -1,0 +1,243 @@
+.footer {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  color: #000000;
+  padding: 4rem 2rem 1rem;
+  margin-top: 4rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1a237e 0%, #283593 100%);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.footer-section:hover {
+  transform: translateY(-5px);
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-logo:hover {
+  transform: translateY(-5px);
+}
+
+.footer-logo-image {
+  height: 60px;
+  width: auto;
+  filter: none; /* Remove the white filter */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-text {
+  color: #000000;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.footer-section h3 {
+  color: #1a237e;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #1a237e 0%, #283593 100%);
+  transition: width 0.3s ease;
+}
+
+.footer-section:hover h3::after {
+  width: 75px;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  color: #333333;
+  margin-bottom: 1rem;
+}
+
+.footer-section.links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section.links ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-section.links ul li a {
+  color: #333333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.footer-section.links ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, #1a237e 0%, #283593 100%);
+  transition: width 0.3s ease;
+}
+
+.footer-section.links ul li a:hover {
+  color: #1a237e;
+  transform: translateX(5px);
+}
+
+.footer-section.links ul li a:hover::after {
+  width: 100%;
+}
+
+.socials {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.socials a {
+  color: #1a237e;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(26, 35, 126, 0.1);
+}
+
+.socials a:hover {
+  background: linear-gradient(90deg, #1a237e 0%, #283593 100%);
+  color: white;
+  transform: translateY(-5px) rotate(360deg);
+  box-shadow: 0 5px 15px rgba(26, 35, 126, 0.3);
+}
+
+.footer-section.contact span {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: #333333;
+  transition: all 0.3s ease;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.footer-section.contact span::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #1a237e;
+  transition: transform 0.3s ease;
+}
+
+.footer-section.contact span:hover {
+  color: #1a237e;
+  transform: translateX(5px);
+}
+
+.footer-section.contact span:hover::before {
+  transform: translateX(3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(26, 35, 126, 0.1);
+}
+
+.footer-bottom p {
+  color: #333333;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 1.5rem 1rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-logo-text {
+    font-size: 1.5rem;
+  }
+
+  .footer-section {
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .footer-section.contact span {
+    padding-left: 0;
+  }
+
+  .footer-section.contact span::before {
+    display: none;
+  }
+}
